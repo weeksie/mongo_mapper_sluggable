@@ -17,16 +17,16 @@ module MongoMapper
         key :slug, String, :unique => true, :index => true, :protected => true, :required => true
       end
       def allow_non_unique_slug
-        @@non_unique_slug = true
+        @non_unique_slug = true
       end
       def allow_non_unique_slug?
-        @@non_unique_slug ||= false
+        @non_unique_slug ||= false
       end
       def slugged_attr(attr_name)
-        @@slugged_attr = attr_name.to_sym
+        @slugged_attr = attr_name.to_sym
       end
       def slugged_attr_name
-        @@slugged_attr ||= :name
+        @slugged_attr ||= :name
       end
     end
     
