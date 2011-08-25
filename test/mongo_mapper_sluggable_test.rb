@@ -64,7 +64,7 @@ class TestEmbeddableDocument < Test::Unit::TestCase
     assert fnord1.save, "fnord 1 is valid"
     assert !fnord2.save, "fnord 2 should not be valid"
     
-    assert_equal "has already been taken", fnord2.errors.on(:name)
+    assert_equal "has already been taken", fnord2.errors[:name].first
   end
   
   should "give the slug as the to_param value" do

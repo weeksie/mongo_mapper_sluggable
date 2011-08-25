@@ -11,10 +11,10 @@ module MongoMapper
     module ClassMethods
       def slug_callbacks
         before_validation :parameterize_slug
-        validate          :slug_conflict_check      
+        validate :slug_conflict_check      
       end
       def slug_keys
-        key :slug, String, :unique => true, :index => true, :protected => true, :required => true
+        key :slug, String, :index => true, :protected => true, :required => true
       end
       def allow_non_unique_slug
         @non_unique_slug = true
