@@ -52,7 +52,7 @@ module MongoMapper
         slug_count = self.class.count(:slug => self.slug, :id.ne => self.id)
         if slug_count > 0
           if self.class.allow_non_unique_slug?
-            self.slug << "-#{self.class.count}"
+            self.slug << "-#{self.id}"
           else
             errors.add(self.class.slugged_attr_name, "has already been taken")
           end
