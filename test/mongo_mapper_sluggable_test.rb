@@ -54,7 +54,7 @@ class TestEmbeddableDocument < Test::Unit::TestCase
     fnord2.save
     
     assert_equal "23-skidoo", fnord1.slug
-    assert_equal "23-skidoo-#{fnord2.id}", fnord2.slug
+    assert_equal "23-skidoo-1", fnord2.slug
   end
   
   should "cause a validation error if the slug has been taken and non unique slugs are not allowed" do
