@@ -14,7 +14,7 @@ module MongoMapper
         validate :slug_conflict_check      
       end
       def slug_keys
-        key :slug, String, :index => true, :protected => true, :required => true
+        key :slug, String, :protected => true, :required => true
       end
       def allow_non_unique_slug
         @non_unique_slug = true
